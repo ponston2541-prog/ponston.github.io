@@ -1,0 +1,61 @@
+* {
+  font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: linear-gradient(135deg, #d97706 0%, #ea580c 25%, #ffffff 50%, #38bdf8 75%, #0284c7 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Glassmorphism utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(209, 213, 219, 0.8);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 1);
+}
+
+/* Pulse animations */
+@keyframes statusPulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+.pulse-dot {
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
